@@ -16,5 +16,37 @@ namespace BootstrapSite1.Domain.Concrete
 
             get { return Context.Products; }
         }
+
+
+        public void SaveProduct(Product product)
+        {
+            if (product.ProductId == 0)
+            {
+                Context.Products.Add(product);
+            }
+            else
+            {
+                Product dbEntry = Context.Products.Find(product.ProductId);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = product.Name;
+                    dbEntry.Description = product.Description;
+                    dbEntry.Price = product.Price;
+                    dbEntry.Category = product.Category;
+                }
+            }
+            Context.SaveChanges();
+        }
+
+        public Product DeleteProduct(int productId)
+        {
+            Product dbEntry = Context.Products.Find(productId);
+            if (dbEntry != null)
+            {
+                Context.Products.Remove(dbEntry);
+                Context.SaveChanges();
+            }
+            return dbEntry; 
+        }
     }
 }

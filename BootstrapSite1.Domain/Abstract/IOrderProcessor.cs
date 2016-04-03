@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace BootstrapSite1.Domain.Abstract
 {
-    public interface IProductRepository
+    public interface IOrderProcessor
     {
-        IEnumerable<Product> Products { get; }
-
-        void SaveProduct(Product product);
-
-        Product DeleteProduct(int productId);
+        void ProcessOrder(Cart cart, ShippingDetails shippingDetails);
     }
 }

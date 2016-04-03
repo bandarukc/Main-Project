@@ -48,7 +48,7 @@ font-size: 16px;">&nbsp;<a href="#" class="btn btn-success square-btn-adjust">Lo
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li class="text-center">
-                        <img src="~/img/find_user.png" class="user-image img-responsive" />
+                        <img src="~/img/KOMUNIAD main.png" class="user-image img-responsive" />
                     </li>
 
                     <li>
@@ -61,7 +61,9 @@ font-size: 16px;">&nbsp;<a href="#" class="btn btn-success square-btn-adjust">Lo
                         <a href="@Url.Action("Posts","Home")"><i class="fa fa-tags fa-3x"></i> My posts</a>
                     </li>
                     <li>
-                        <a href="@Url.Action("History","Home")"><i class="fa fa-tags fa-3x"></i>History</a>
+                        <a href="@Url.Action("Index", "Cart",
+                                    new { returnUrl = Request.Url.PathAndQuery }
+                                    ))"><i class="fa fa-tags fa-3x"></i>History</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-users fa-3x"></i>My community</a>
