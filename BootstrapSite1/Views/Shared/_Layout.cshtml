@@ -66,46 +66,46 @@ font-size: 16px;">&nbsp;<a href="#" class="btn btn-success square-btn-adjust">Lo
                                     ))"><i class="fa fa-tags fa-3x"></i>History</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-users fa-3x"></i>My community</a>
+                        <a href="@Url.Action("List","Community")"><i class="fa fa-users fa-3x"></i>My community</a>
                     </li>
 
                     <li>
                         <a href="#"><i class="fa fa-filter fa-3x"></i> Catagories<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">Automobiles</a>
+                                <a href=@Url.Action("List_Automobiles","Product")>Automobiles</a>
                             </li>
                             <li>
-                                <a href="#">Furniture</a>
+                                <a href=@Url.Action("List_Furniture", "Product")>Furniture</a>
                             </li>
                             <li>
                                 <a href="#">Electronics<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="#">Mobiles</a>
+                                        <a href=@Url.Action("List_Mobile", "Product")>Mobiles</a>
                                     </li>
                                     <li>
-                                        <a href="#">Laptops</a>
+                                        <a href=@Url.Action("List_Laptop", "Product")>Laptops</a>
                                     </li>
                                     <li>
-                                        <a href="#">Other Electronics</a>
+                                        <a href=@Url.Action("List_Other_Electronics", "Product")>Other Electronics</a>
                                     </li>
 
                                 </ul>
 
                             </li>
                             <li>
-                                <a href="#">Other Items</a>
+                                <a href=@Url.Action("List_Other","Product")>Other Items</a>
                             </li>
 
                         </ul>
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-info fa-3x"></i> About</a>
+                        <a href="@Url.Action("About","Home")"><i class="fa fa-info fa-3x"></i> About</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-question fa-3x"></i> Help </a>
+                        <a href="@Url.Action("Help","Home")"><i class="fa fa-question fa-3x"></i> Help </a>
                     </li>
                 </ul>
 

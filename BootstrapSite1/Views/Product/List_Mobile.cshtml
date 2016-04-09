@@ -1,0 +1,17 @@
+﻿@model BootstrapSite1.Models.ProductsListViewModel
+
+@{
+    ViewBag.Title = "List_Mobile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var p in Model.Products)
+{
+    @Html.Partial("ProductSummary", p)
+}
+
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List_Mobile",
+    new { page = x, category = Model.CurrentCategory }))
+</div>
+

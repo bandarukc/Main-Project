@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootstrapSite1", "Bootstrap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootstrapSite1.Domain", "BootstrapSite1.Domain\BootstrapSite1.Domain.csproj", "{3FB08529-D638-48A7-97B4-01C7D9CF05F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCImageGallery", "..\MVCImageGallery\MVCImageGallery\MVCImageGallery.csproj", "{62925C30-E355-4A7E-A55F-803A854DC6C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3FB08529-D638-48A7-97B4-01C7D9CF05F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FB08529-D638-48A7-97B4-01C7D9CF05F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FB08529-D638-48A7-97B4-01C7D9CF05F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62925C30-E355-4A7E-A55F-803A854DC6C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62925C30-E355-4A7E-A55F-803A854DC6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62925C30-E355-4A7E-A55F-803A854DC6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62925C30-E355-4A7E-A55F-803A854DC6C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,5 +12,6 @@ namespace BootstrapSite1.Domain.Concrete
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Community> Communities { get; set; }
     }
 }
