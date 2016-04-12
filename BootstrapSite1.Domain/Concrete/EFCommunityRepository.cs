@@ -17,5 +17,18 @@ namespace BootstrapSite1.Domain.Concrete
         {
             get { return context.Communities; }
         }
+
+        public bool Authenticate(string username, string password)
+        {
+            var result = context.Communities.FirstOrDefault(u => u.Email == username && u.Password == password);
+            if (result == null)
+                return false;
+            return true;
+        }
+
+        public bool Logout()
+        {
+            return true;
+        }
     }
 }

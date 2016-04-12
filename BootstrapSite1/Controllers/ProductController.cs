@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace BootstrapSite1.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly IProductRepository repository;

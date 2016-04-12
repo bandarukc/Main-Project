@@ -9,6 +9,7 @@ namespace BootstrapSite1.Domain.Abstract
 {
     public interface ICommunityRepository
     {
-        IEnumerable<Community> Communities { get; }
+        IEnumerable<Community> Communities { get;}
+        
     }
 }
