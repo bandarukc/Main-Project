@@ -1,4 +1,5 @@
 ﻿using BootstrapSite1.Domain.Abstract;
+using BootstrapSite1.Domain.Entities;
 using BootstrapSite1.Models;
 using System;
 using System.Collections.Generic;
@@ -166,5 +167,66 @@ namespace BootstrapSite1.Controllers
             };
             return View(model);
         }
+
+        public ActionResult MyPosts()
+        {
+            var U_name = Session["LogedInUser"].ToString();
+            return View(repository.Products.Where(p=>p.Email==U_name));
+        }
+
+        public ViewResult MyPostEdit(int productId)
+        {
+            Product product = repository.Products.FirstOrDefault(p => p.ProductId == productId);
+            return View(product);
+        }
+        [HttpPost]
+        public ActionResult MyPostEdit(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                repository.SaveProduct(product);
+                TempData["message"] = string.Format("{0} has been saved",
+                    product.Name);
+                return RedirectToAction("MyPosts");
+
+            }
+            else
+            {
+                return View(product);
+            }
+        }
+        [HttpPost]
+        public ActionResult Delete(int productId)
+        {
+            Product deletedProduct = repository.DeleteProduct(productId);
+            if (deletedProduct != null)
+            {
+                TempData["message"] = string.Format("{0} was deleted",
+                   deletedProduct.Name);
+            }
+            return RedirectToAction("Myposts");
+        }
+
+        public ViewResult PostAd()
+        {
+            return View(new Product());
+        }
+        [HttpPost]
+        public ActionResult PostAd(Product product)
+        {
+
+            if (ModelState.IsValid)
+            {
+                repository.SaveProduct(product);
+                return RedirectToAction("List");
+
+            }
+            else
+            {
+                return View(product);
+            }
+        }
+
+          
     }
 }

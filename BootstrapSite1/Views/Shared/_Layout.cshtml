@@ -41,7 +41,7 @@
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;">&nbsp;<a href="#" class="btn btn-success square-btn-adjust">Logout</a></div>
+font-size: 16px;">&nbsp;<a href="@Url.Action("Login","Account")" class="btn btn-success square-btn-adjust">Logout</a></div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -55,10 +55,10 @@ font-size: 16px;">&nbsp;<a href="#" class="btn btn-success square-btn-adjust">Lo
                         <a class="active-menu" href=@Url.Action("List","Product")><i class="fa fa-home fa-3x"></i> Home</a>
                     </li>
                     <li>
-                        <a href=@Url.Action("Profile","Home")><i class="fa fa-user fa-3x"></i>My Profile</a>
+                        <a href=@Url.Action("Profile","Community")><i class="fa fa-user fa-3x"></i>My Profile</a>
                     </li>
                     <li>
-                        <a href="@Url.Action("Posts","Home")"><i class="fa fa-tags fa-3x"></i> My posts</a>
+                        <a href=@Url.Action("MyPosts","Product")><i class="fa fa-tags fa-3x"></i> My posts</a>
                     </li>
                     <li>
                         <a href="@Url.Action("Index", "Cart",

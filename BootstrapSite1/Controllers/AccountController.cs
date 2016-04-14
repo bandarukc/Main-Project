@@ -12,7 +12,9 @@ namespace BootstrapSite1.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+       
         IAuthentication authentication;
+        
         public AccountController(IAuthentication authentication)
         {
             this.authentication = authentication;
@@ -26,10 +28,15 @@ namespace BootstrapSite1.Controllers
         [AllowAnonymous]
         public ActionResult Login(LoginViewModel model, string returnUrl)
         {
+            
+            
             if (ModelState.IsValid)
             {
                 if (authentication.Authenticate(model.UserName, model.Password))
+
                 {
+                    Session["LogedInUser"] = model.UserName;
+                    
                     FormsAuthentication.SetAuthCookie(model.UserName, false);
                     return Redirect(returnUrl ?? Url.Action("Index", "Admin"));
                 }
@@ -50,6 +57,8 @@ namespace BootstrapSite1.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Admin");
         }
+
+    
 
     }
 }

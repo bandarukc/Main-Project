@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BootstrapSite1.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,12 +10,7 @@ namespace BootstrapSite1.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            ViewBag.Title="Home";
-            return View();
-        }
-
+       
         public ActionResult Profile()
         {
             

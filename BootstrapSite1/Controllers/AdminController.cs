@@ -28,6 +28,7 @@ namespace BootstrapSite1.Controllers
         [HttpPost]
         public ActionResult Create(Product product)
         {
+            
             if (ModelState.IsValid)
             {
                 repository.SaveProduct(product);

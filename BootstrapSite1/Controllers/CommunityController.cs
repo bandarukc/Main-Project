@@ -6,8 +6,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace BootstrapSite1.Controllers
 {
+    [Authorize]
     public class CommunityController : Controller
     {
         private readonly ICommunityRepository repository;
@@ -37,6 +39,18 @@ namespace BootstrapSite1.Controllers
             return View(model);
         }
 
+        public ActionResult Profile()
+        {
+            var U_Name = Session["LogedInUser"].ToString();
+            CommunityListViewModel model = new CommunityListViewModel
+            {
+                Communities = repository.Communities
+                .Where(p=>p.Email==U_Name)
+                     
+            };
+            return View(model);
+        }
+     
         
     }
 }

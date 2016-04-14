@@ -5,11 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.IO;
 
 namespace BootstrapSite1.Domain.Concrete
 {
     public class EFProductRepository:IProductRepository
     {
+        
         private readonly EFDbContext Context = new EFDbContext();
         public IEnumerable<Product> Products
         {
@@ -27,12 +30,15 @@ namespace BootstrapSite1.Domain.Concrete
             else
             {
                 Product dbEntry = Context.Products.Find(product.ProductId);
+                
                 if (dbEntry != null)
                 {
                     dbEntry.Name = product.Name;
                     dbEntry.Description = product.Description;
                     dbEntry.Price = product.Price;
                     dbEntry.Category = product.Category;
+                   
+                    
                 }
             }
             Context.SaveChanges();
