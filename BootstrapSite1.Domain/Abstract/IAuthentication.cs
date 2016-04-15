@@ -8,7 +8,7 @@ namespace BootstrapSite1.Domain.Abstract
 {
     public interface IAuthentication
     {
-        bool Authenticate(string username, string password);
+        int Authenticate(string username, string password);
         bool Logout();
     }
 }

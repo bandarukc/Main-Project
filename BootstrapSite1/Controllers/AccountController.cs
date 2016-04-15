@@ -32,7 +32,8 @@ namespace BootstrapSite1.Controllers
             
             if (ModelState.IsValid)
             {
-                if (authentication.Authenticate(model.UserName, model.Password))
+                int result=authentication.Authenticate(model.UserName, model.Password);
+                if (result==1)
 
                 {
                     Session["LogedInUser"] = model.UserName;
@@ -40,6 +41,14 @@ namespace BootstrapSite1.Controllers
                     FormsAuthentication.SetAuthCookie(model.UserName, false);
                     return Redirect(returnUrl ?? Url.Action("Index", "Admin"));
                 }
+                else if (result==2)
+                {
+                    Session["LogedInUser"] = model.UserName;
+                    
+                    FormsAuthentication.SetAuthCookie(model.UserName, false);
+                    return Redirect(returnUrl ?? Url.Action("List", "Product"));
+                }
+
                 else
                 {
                     ModelState.AddModelError("", "Incorrect username or password");

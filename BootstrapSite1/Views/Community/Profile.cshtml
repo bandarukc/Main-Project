@@ -5,72 +5,92 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Profile</h2>
-<table class="table table-responsive table-bordered">
-    <tr>
-        <th>
-            Firstname
-        </th>
-        <th>
-            LastName
-        </th>
-        <th>
-            CompanyName
-        </th>
-        <th>
-            Address
-        </th>
-        <th>
-            City
-        </th>
-        <th>
-            Country
-        </th>
-        <th>
-            State
-        </th>
-
-        <th>
-            Phone
-        </th>
-        <th>
-            Email
-        </th>
-
-
-    </tr>
+<h2>My Profile</h2>
+<table class="table table-responsive table-striped">
 
     @foreach (var item in Model.Communities)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Firstname)
+                @Html.LabelFor(modelItem => item.Firstname, htmlAttributes: new { @class = "control-label col-md-2" })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CompanyName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.State)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
+                @Html.DisplayFor(modelItem => item.Firstname, new { htmlAttributes = new { @class = "form-control" } })
             </td>
         </tr>
+
+    <tr>
+        <td>
+            @Html.LabelFor(modelItem => item.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName, new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(modelItem => item.CompanyName, htmlAttributes: new { @class = "control-label col-md-2" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName, new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(modelItem => item.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address, new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(modelItem => item.City, htmlAttributes: new { @class = "control-label col-md-2" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City, new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(modelItem => item.Country, htmlAttributes: new { @class = "control-label col-md-2" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country, new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(modelItem => item.State, htmlAttributes: new { @class = "control-label col-md-2" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State, new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(modelItem => item.Zip, htmlAttributes: new { @class = "control-label col-md-2" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zip, new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(modelItem => item.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone, new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(modelItem => item.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email, new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+    </tr>
     }
 
 </table>

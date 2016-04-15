@@ -9,34 +9,34 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <div>This is the list of products that you have posted</div>
+        <div style="font-family:Arial;color:red" class="text-center"> <b>THIS IS THE LIST OF ALL THE PRODUCTS YOU HAVE POSTED</b></div>
     </div>
     <div class="panel-body">
         <table class="table table-striped table-condensed table-bordered">
             <tr>
-                <th class="text-right">
+                <th class="text-center">
                    Name
                 </th>
-                <th>Description</th>
-                <th class="text-right">Price</th>
+                <th class="text-center">Description</th>
+                <th class="text-center">Price</th>
                 <th class="text-center">Actions</th>
             </tr>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td class="text-right">@Html.ActionLink(item.Name, "MyPostEdit",
+                    <td class="text-center">@Html.ActionLink(item.Name, "MyPostEdit",
                     new { item.ProductId })</td>
-                    <td>
-                       @item.Description
+                    <td class="text-center">
+                        @item.Description
                     </td>
-                    <td class="text-right">@item.Price.ToString("c")</td>
+                    <td class="text-center">@item.Price.ToString("c")</td>
                     <td class="text-center">
                         @using (Html.BeginForm("Delete", "Product"))
                         {
                             @Html.Hidden("ProductId", item.ProductId)
                             <input type="submit"
-                                   class="btn btn-default btn-xs"
-                                   value="Delete" />
+                                   class="btn btn-default btn-sm btn-warning"
+                                   value="Remove Ad" />
                         }
                     </td>
                 </tr>
